@@ -1,0 +1,10 @@
+# fusion archives and other exports, too big to keep here
+*.f3d
+*.f3z
+*.stl
+*.zip
+
+# os files
+Thumbs.db
+desktop.ini
+.DS_Store

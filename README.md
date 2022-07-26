@@ -1,17 +1,60 @@
 # Robocon-2022
 
-## Design of Seeker Robot 1 (Seeker R1)
+CAD design of our two robots R1 and R2 for DD Robocon 2022 (theme: Lagori).
+Both robots were modelled in Fusion 360 and exported as STEP files so they can be
+opened in any CAD tool. There is no code in this repo, only the mechanical design.
 
-![](https://github.com/Patil-Vinay/Robocon-2022/blob/main/R1_Robot_Design.png)
+![](images/robot_design.png)
 
-The Robot R1’s body contains the Hopper-Funnel mechanism to accept all the three balls at once from the Robot R2. The central ball of the three gets loaded first and the side ones are held in place by a hopper mechanism consisting of two stepper motors and will be responsible for reloading. The other balls will be loaded one by one when the previous one is shot at the target lagori.
+## Folder structure
 
-The Robot R1’s body consists of two linear actuators at its base plate that help lift the whole rotating body (pipe-shooter mechanism) and provide an angle of elevation to it. The ball, already loaded in the pipe-shooter is then pushed gently towards the high-RPM motors, where the motors depict the mechanism of a baseball shooter machine and shoots the ball at the target lagori by calculating the trajectory and range using image detection. 
+```
+cad/r1/r1_body.step    full R1 assembly
+cad/r1/parts/          R1 mechanisms and parts
+cad/r2/r2_body.step    full R2 assembly
+cad/r2/parts/          R2 mechanisms and parts
+images/                renders of both robots
+videos/                assembly animations of R1 and R2
+```
 
-## Design of Picker Robot 2 (Picker R2)
+## R1 (shooter)
 
-![](https://github.com/Patil-Vinay/Robocon-2022/blob/main/R2_Robot_Design.png)
+![](images/r1_design.png)
 
-For picking up the lagori and carrying them to lagori’s square base, we are using three suction cups and vacuum. There are two suction cups(i.e Suction Cup 1 and 2) facing downwards and one suction cup(i.e Suction Cup 3) facing sideways. We will use sideways suction cup (i.e Suction Cup 3) to lift only the topmost lagori to the lagori pile. We will be creating a vacuum inside the suction cup by placing these suction cups on lagori’s, which will hold the lagori’s in place and by releasing the vacuum the lagori’s will be released. These suction cups are connected to a platform via linear actuators which can extend outwards. These suction cups which are attached to the platform can move linearly up and down using stepper motors. When R2 gets close to the lagori pile or lagori base, the platform will travel linearly upward using stepper motors and come to a stop at a height where lagori can be lowered to the pile. After reaching the desired height, the linear actuators will extend themselves to align lagori right above the lagori pile or lagori base and then it will drop the lagori’s by releasing the vacuum in the suction cup.
+R1 has a hopper-funnel on top that takes all three balls from R2 at once. The middle
+ball gets loaded first. The side balls are held in the hopper by two stepper motors
+which release them one by one after each shot.
 
-For picking up all three balls at once and carrying them to R1, we are using three suction cups and vacuum. The robot uses a vacuum pump to create a vacuum inside the suction cup to catch all three balls, which will hold the ball in place and by releasing the vacuum all the balls will be released. These three suction cups are connected to a platform via linear actuators which extend outwards and are attached to the platform which can move linearly up and down using stepper motors. When R2 gets close to R1, the platform will travel linearly upward using stepper motors and come to a stop at a height where balls can be lowered to the R1 feeder. After reaching the desired height, the linear actuators will extend themselves to align balls right above the R1 feeder and then it will drop all the three balls by releasing the vacuum in the suction cup.
+Two linear actuators on the base plate lift the rotating table with the pipe shooter
+on it and set the angle of elevation. The ball in the pipe is pushed into the high-RPM
+motors that throw it like a baseball pitching machine. Aiming with a camera was
+planned but is not part of this repo.
+
+The base runs on four mecanum wheels.
+
+## R2 (picker)
+
+![](images/r2_design.png)
+
+R2 is a tall frame with a platform that moves up and down on stepper driven lead
+screws. Suction cups connected to a vacuum pump hold the lagori discs and the balls.
+Creating the vacuum grips the part and releasing it drops the part.
+
+For the lagori discs two suction cups face down and one faces sideways. The sideways
+cup is used to lift only the topmost disc onto the pile. When R2 reaches the pile the
+platform goes up to the right height, the linear actuators extend so the disc sits
+right above the pile and the vacuum is released.
+
+For the balls three suction cups pick up all three balls together. Near R1 the
+platform goes up to the height of the R1 hopper, the actuators extend over it and the
+balls are dropped in.
+
+The base runs on omni wheels.
+
+## Opening the files
+
+The STEP files are AP214 exports from Fusion 360. They open in Fusion 360, SolidWorks,
+FreeCAD (0.19 or newer) or any viewer that reads STEP. The two full body files are
+9 MB and 12 MB so they take a while to load.
+
+The videos in `videos/` show each robot being put together part by part.
