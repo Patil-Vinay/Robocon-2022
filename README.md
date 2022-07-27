@@ -15,6 +15,7 @@ cad/r2/r2_body.step    full R2 assembly
 cad/r2/parts/          R2 mechanisms and parts
 images/                renders of both robots
 videos/                assembly animations of R1 and R2
+docs/parts.md          what each STEP file contains
 ```
 
 ## R1 (shooter)
